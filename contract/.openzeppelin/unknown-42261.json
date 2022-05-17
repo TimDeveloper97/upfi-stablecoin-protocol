@@ -1,0 +1,1210 @@
+{
+  "manifestVersion": "3.2",
+  "admin": {
+    "address": "0xBf2fF63b7508aF00B9A56116b883884ee4ba12A7",
+    "txHash": "0xc9324a709d91b05744e114bfc103d4ccf0253723b2527867d9b9096006602cd6"
+  },
+  "proxies": [
+    {
+      "address": "0xF0892b3B18438B595dE94490d4Ce87FB0AC9647B",
+      "txHash": "0xa2f3463e8b009b5a4c90428c63b0e5aae3e4cd3925ecdad24b7d23f2da22a436",
+      "kind": "transparent"
+    }
+  ],
+  "impls": {
+    "bfcf3e0953fcbb63c29bc34a365086e9de45089df24443d7aee2fe264218bb49": {
+      "address": "0xE6aE10ADe24f96e68800d0FfD7C0b7F8e0c6Bd18",
+      "txHash": "0xeb42149039602de604c04ee113657fd915ad0ff63b18afabb5c538d6ae323cd0",
+      "layout": {
+        "storage": [
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_address",
+            "contract": "Ownable",
+            "src": "@openzeppelin/contracts/access/Ownable.sol:21"
+          },
+          {
+            "label": "_operator",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "Operator",
+            "src": "contracts/Operator.sol:9"
+          },
+          {
+            "label": "_status",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256",
+            "contract": "ReentrancyGuard",
+            "src": "@openzeppelin/contracts/security/ReentrancyGuard.sol:37"
+          },
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "3",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "oracle",
+            "offset": 2,
+            "slot": "3",
+            "type": "t_address",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:25"
+          },
+          {
+            "label": "collateral",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_address",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:26"
+          },
+          {
+            "label": "dollar",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_address",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:27"
+          },
+          {
+            "label": "treasury",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_address",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:28"
+          },
+          {
+            "label": "share",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_address",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:29"
+          },
+          {
+            "label": "redeem_share_balances",
+            "offset": 0,
+            "slot": "8",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:31"
+          },
+          {
+            "label": "redeem_collateral_balances",
+            "offset": 0,
+            "slot": "9",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:32"
+          },
+          {
+            "label": "unclaimed_pool_collateral",
+            "offset": 0,
+            "slot": "10",
+            "type": "t_uint256",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:34"
+          },
+          {
+            "label": "unclaimed_pool_share",
+            "offset": 0,
+            "slot": "11",
+            "type": "t_uint256",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:35"
+          },
+          {
+            "label": "last_redeemed",
+            "offset": 0,
+            "slot": "12",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:37"
+          },
+          {
+            "label": "missing_decimals",
+            "offset": 0,
+            "slot": "13",
+            "type": "t_uint256",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:45"
+          },
+          {
+            "label": "pool_ceiling",
+            "offset": 0,
+            "slot": "14",
+            "type": "t_uint256",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:48"
+          },
+          {
+            "label": "redemption_delay",
+            "offset": 0,
+            "slot": "15",
+            "type": "t_uint256",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:51"
+          },
+          {
+            "label": "mint_paused",
+            "offset": 0,
+            "slot": "16",
+            "type": "t_bool",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:54"
+          },
+          {
+            "label": "redeem_paused",
+            "offset": 1,
+            "slot": "16",
+            "type": "t_bool",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:55"
+          },
+          {
+            "label": "migrated",
+            "offset": 2,
+            "slot": "16",
+            "type": "t_bool",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:56"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "d52042c9f71644f38ed733dbe38429e99eeddfacb5a1495b57d3324b97f2ac44": {
+      "address": "0xcee4fBdEACfBb57594c5A9F7cB5B912295E1b8Be",
+      "txHash": "0x7a2e69c8a83a076324b09e545edc8fab5ee52facb31888fa6a7ee42b0eb43397",
+      "layout": {
+        "storage": [
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_address",
+            "contract": "Ownable",
+            "src": "@openzeppelin/contracts/access/Ownable.sol:21"
+          },
+          {
+            "label": "_operator",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "Operator",
+            "src": "contracts/Operator.sol:9"
+          },
+          {
+            "label": "_status",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256",
+            "contract": "ReentrancyGuard",
+            "src": "@openzeppelin/contracts/security/ReentrancyGuard.sol:37"
+          },
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "3",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "oracle",
+            "offset": 2,
+            "slot": "3",
+            "type": "t_address",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:25"
+          },
+          {
+            "label": "collateral",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_address",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:26"
+          },
+          {
+            "label": "dollar",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_address",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:27"
+          },
+          {
+            "label": "treasury",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_address",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:28"
+          },
+          {
+            "label": "share",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_address",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:29"
+          },
+          {
+            "label": "redeem_share_balances",
+            "offset": 0,
+            "slot": "8",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:31"
+          },
+          {
+            "label": "redeem_collateral_balances",
+            "offset": 0,
+            "slot": "9",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:32"
+          },
+          {
+            "label": "unclaimed_pool_collateral",
+            "offset": 0,
+            "slot": "10",
+            "type": "t_uint256",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:34"
+          },
+          {
+            "label": "unclaimed_pool_share",
+            "offset": 0,
+            "slot": "11",
+            "type": "t_uint256",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:35"
+          },
+          {
+            "label": "last_redeemed",
+            "offset": 0,
+            "slot": "12",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:37"
+          },
+          {
+            "label": "missing_decimals",
+            "offset": 0,
+            "slot": "13",
+            "type": "t_uint256",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:45"
+          },
+          {
+            "label": "pool_ceiling",
+            "offset": 0,
+            "slot": "14",
+            "type": "t_uint256",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:48"
+          },
+          {
+            "label": "redemption_delay",
+            "offset": 0,
+            "slot": "15",
+            "type": "t_uint256",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:51"
+          },
+          {
+            "label": "mint_paused",
+            "offset": 0,
+            "slot": "16",
+            "type": "t_bool",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:54"
+          },
+          {
+            "label": "redeem_paused",
+            "offset": 1,
+            "slot": "16",
+            "type": "t_bool",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:55"
+          },
+          {
+            "label": "migrated",
+            "offset": 2,
+            "slot": "16",
+            "type": "t_bool",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:56"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "b3e25bee3d2addf95e36c594929f4a1983b498f64daecedcc77cba53d3bd33da": {
+      "address": "0xB1734de1F00D85cb1fc4C3E4F4A57F4304fB598D",
+      "txHash": "0x4187bf54dba0bc48c102b7535989fa55428cefe00406e61492e306944e0864e4",
+      "layout": {
+        "storage": [
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_address",
+            "contract": "Ownable",
+            "src": "@openzeppelin/contracts/access/Ownable.sol:21"
+          },
+          {
+            "label": "_operator",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "Operator",
+            "src": "contracts/Operator.sol:9"
+          },
+          {
+            "label": "_status",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256",
+            "contract": "ReentrancyGuard",
+            "src": "@openzeppelin/contracts/security/ReentrancyGuard.sol:37"
+          },
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "3",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "oracle",
+            "offset": 2,
+            "slot": "3",
+            "type": "t_address",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:25"
+          },
+          {
+            "label": "collateral",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_address",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:26"
+          },
+          {
+            "label": "dollar",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_address",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:27"
+          },
+          {
+            "label": "treasury",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_address",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:28"
+          },
+          {
+            "label": "share",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_address",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:29"
+          },
+          {
+            "label": "redeem_share_balances",
+            "offset": 0,
+            "slot": "8",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:31"
+          },
+          {
+            "label": "redeem_collateral_balances",
+            "offset": 0,
+            "slot": "9",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:32"
+          },
+          {
+            "label": "unclaimed_pool_collateral",
+            "offset": 0,
+            "slot": "10",
+            "type": "t_uint256",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:34"
+          },
+          {
+            "label": "unclaimed_pool_share",
+            "offset": 0,
+            "slot": "11",
+            "type": "t_uint256",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:35"
+          },
+          {
+            "label": "last_redeemed",
+            "offset": 0,
+            "slot": "12",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:37"
+          },
+          {
+            "label": "missing_decimals",
+            "offset": 0,
+            "slot": "13",
+            "type": "t_uint256",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:45"
+          },
+          {
+            "label": "pool_ceiling",
+            "offset": 0,
+            "slot": "14",
+            "type": "t_uint256",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:48"
+          },
+          {
+            "label": "redemption_delay",
+            "offset": 0,
+            "slot": "15",
+            "type": "t_uint256",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:51"
+          },
+          {
+            "label": "mint_paused",
+            "offset": 0,
+            "slot": "16",
+            "type": "t_bool",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:54"
+          },
+          {
+            "label": "redeem_paused",
+            "offset": 1,
+            "slot": "16",
+            "type": "t_bool",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:55"
+          },
+          {
+            "label": "migrated",
+            "offset": 2,
+            "slot": "16",
+            "type": "t_bool",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:56"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "e2f8edac9c591a9a554ddfb72e60c8cf09823db3f2517b213ecc8f9bda46bd03": {
+      "address": "0x3983484171619366De6768BD3C5150b276292Db6",
+      "txHash": "0x7e8ca28b0bd729c6d3488031486f9744bf5f4f81b6501ac04d5bf9eb929e0405",
+      "layout": {
+        "storage": [
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_address",
+            "contract": "Ownable",
+            "src": "@openzeppelin/contracts/access/Ownable.sol:21"
+          },
+          {
+            "label": "_operator",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "Operator",
+            "src": "contracts/Operator.sol:9"
+          },
+          {
+            "label": "_status",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256",
+            "contract": "ReentrancyGuard",
+            "src": "@openzeppelin/contracts/security/ReentrancyGuard.sol:37"
+          },
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "3",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "oracle",
+            "offset": 2,
+            "slot": "3",
+            "type": "t_address",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:25"
+          },
+          {
+            "label": "collateral",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_address",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:26"
+          },
+          {
+            "label": "dollar",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_address",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:27"
+          },
+          {
+            "label": "treasury",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_address",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:28"
+          },
+          {
+            "label": "share",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_address",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:29"
+          },
+          {
+            "label": "redeem_share_balances",
+            "offset": 0,
+            "slot": "8",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:31"
+          },
+          {
+            "label": "redeem_collateral_balances",
+            "offset": 0,
+            "slot": "9",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:32"
+          },
+          {
+            "label": "unclaimed_pool_collateral",
+            "offset": 0,
+            "slot": "10",
+            "type": "t_uint256",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:34"
+          },
+          {
+            "label": "unclaimed_pool_share",
+            "offset": 0,
+            "slot": "11",
+            "type": "t_uint256",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:35"
+          },
+          {
+            "label": "last_redeemed",
+            "offset": 0,
+            "slot": "12",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:37"
+          },
+          {
+            "label": "missing_decimals",
+            "offset": 0,
+            "slot": "13",
+            "type": "t_uint256",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:45"
+          },
+          {
+            "label": "pool_ceiling",
+            "offset": 0,
+            "slot": "14",
+            "type": "t_uint256",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:48"
+          },
+          {
+            "label": "redemption_delay",
+            "offset": 0,
+            "slot": "15",
+            "type": "t_uint256",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:51"
+          },
+          {
+            "label": "mint_paused",
+            "offset": 0,
+            "slot": "16",
+            "type": "t_bool",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:54"
+          },
+          {
+            "label": "redeem_paused",
+            "offset": 1,
+            "slot": "16",
+            "type": "t_bool",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:55"
+          },
+          {
+            "label": "migrated",
+            "offset": 2,
+            "slot": "16",
+            "type": "t_bool",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:56"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "b8a3d25ef1755af0719e8056c4cb9bd8f7af43384fdb8b5a8065fecf4213aba4": {
+      "address": "0xE98ebbcfb1F42a15558a4390671f4c4df4d7bEcE",
+      "txHash": "0x551aed57f5d8bdda8105285afd929cb22974f4e3fe64018e276d03c5fc6b83dd",
+      "layout": {
+        "storage": [
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_address",
+            "contract": "Ownable",
+            "src": "@openzeppelin/contracts/access/Ownable.sol:21"
+          },
+          {
+            "label": "_operator",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "Operator",
+            "src": "contracts/Operator.sol:9"
+          },
+          {
+            "label": "_status",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256",
+            "contract": "ReentrancyGuard",
+            "src": "@openzeppelin/contracts/security/ReentrancyGuard.sol:37"
+          },
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "3",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "oracle",
+            "offset": 2,
+            "slot": "3",
+            "type": "t_address",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:25"
+          },
+          {
+            "label": "collateral",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_address",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:26"
+          },
+          {
+            "label": "dollar",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_address",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:27"
+          },
+          {
+            "label": "treasury",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_address",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:28"
+          },
+          {
+            "label": "share",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_address",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:29"
+          },
+          {
+            "label": "redeem_share_balances",
+            "offset": 0,
+            "slot": "8",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:31"
+          },
+          {
+            "label": "redeem_collateral_balances",
+            "offset": 0,
+            "slot": "9",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:32"
+          },
+          {
+            "label": "unclaimed_pool_collateral",
+            "offset": 0,
+            "slot": "10",
+            "type": "t_uint256",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:34"
+          },
+          {
+            "label": "unclaimed_pool_share",
+            "offset": 0,
+            "slot": "11",
+            "type": "t_uint256",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:35"
+          },
+          {
+            "label": "last_redeemed",
+            "offset": 0,
+            "slot": "12",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:37"
+          },
+          {
+            "label": "missing_decimals",
+            "offset": 0,
+            "slot": "13",
+            "type": "t_uint256",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:45"
+          },
+          {
+            "label": "pool_ceiling",
+            "offset": 0,
+            "slot": "14",
+            "type": "t_uint256",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:48"
+          },
+          {
+            "label": "redemption_delay",
+            "offset": 0,
+            "slot": "15",
+            "type": "t_uint256",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:51"
+          },
+          {
+            "label": "mint_paused",
+            "offset": 0,
+            "slot": "16",
+            "type": "t_bool",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:54"
+          },
+          {
+            "label": "redeem_paused",
+            "offset": 1,
+            "slot": "16",
+            "type": "t_bool",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:55"
+          },
+          {
+            "label": "migrated",
+            "offset": 2,
+            "slot": "16",
+            "type": "t_bool",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:56"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "637c3c92372945d69632046f7bd7d80b8f525ab10f0b68dd67c0e08abc2fd687": {
+      "address": "0x1598234A271Cc2361867228B4e4D049B02934712",
+      "txHash": "0xc0677b0aa3994d61eb5edb9ff6619435713faae5057e9e6d82bda53868b0bc92",
+      "layout": {
+        "storage": [
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_address",
+            "contract": "Ownable",
+            "src": "@openzeppelin/contracts/access/Ownable.sol:21"
+          },
+          {
+            "label": "_operator",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "Operator",
+            "src": "contracts/Operator.sol:9"
+          },
+          {
+            "label": "_status",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256",
+            "contract": "ReentrancyGuard",
+            "src": "@openzeppelin/contracts/security/ReentrancyGuard.sol:37"
+          },
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "3",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "oracle",
+            "offset": 2,
+            "slot": "3",
+            "type": "t_address",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:25"
+          },
+          {
+            "label": "collateral",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_address",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:26"
+          },
+          {
+            "label": "dollar",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_address",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:27"
+          },
+          {
+            "label": "treasury",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_address",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:28"
+          },
+          {
+            "label": "share",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_address",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:29"
+          },
+          {
+            "label": "redeem_share_balances",
+            "offset": 0,
+            "slot": "8",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:31"
+          },
+          {
+            "label": "redeem_collateral_balances",
+            "offset": 0,
+            "slot": "9",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:32"
+          },
+          {
+            "label": "unclaimed_pool_collateral",
+            "offset": 0,
+            "slot": "10",
+            "type": "t_uint256",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:34"
+          },
+          {
+            "label": "unclaimed_pool_share",
+            "offset": 0,
+            "slot": "11",
+            "type": "t_uint256",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:35"
+          },
+          {
+            "label": "last_redeemed",
+            "offset": 0,
+            "slot": "12",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:37"
+          },
+          {
+            "label": "missing_decimals",
+            "offset": 0,
+            "slot": "13",
+            "type": "t_uint256",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:45"
+          },
+          {
+            "label": "pool_ceiling",
+            "offset": 0,
+            "slot": "14",
+            "type": "t_uint256",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:48"
+          },
+          {
+            "label": "redemption_delay",
+            "offset": 0,
+            "slot": "15",
+            "type": "t_uint256",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:51"
+          },
+          {
+            "label": "mint_paused",
+            "offset": 0,
+            "slot": "16",
+            "type": "t_bool",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:54"
+          },
+          {
+            "label": "redeem_paused",
+            "offset": 1,
+            "slot": "16",
+            "type": "t_bool",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:55"
+          },
+          {
+            "label": "migrated",
+            "offset": 2,
+            "slot": "16",
+            "type": "t_bool",
+            "contract": "Pool",
+            "src": "contracts/Pool.sol:56"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    }
+  }
+}

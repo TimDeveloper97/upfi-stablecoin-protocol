@@ -1,0 +1,46 @@
+@import '~antd/dist/antd.css';
+
+body {
+  margin: 0;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.app {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+.main {
+  background: linear-gradient(
+    to right,
+    rgb(248, 226, 160) 0%,
+    rgb(247, 205, 167) 21.67%,
+    rgb(247, 207, 166) 39.41%,
+    rgb(246, 192, 171) 53.69%,
+    rgb(245, 178, 175) 100%
+  );
+}
+.gradient-silky {
+  background-color: linear-gradient(
+    rgba(250, 249, 250, 0) 0%,
+    rgba(250, 249, 250, 0.26) 11.14%,
+    rgba(250, 249, 250, 0.45) 25.87%,
+    rgba(250, 249, 250, 0.58) 31.44%,
+    rgba(250, 249, 250, 0.64) 43.85%,
+    rgba(250, 249, 250, 0.79) 57.84%,
+    rgba(250, 249, 250, 0.94) 71.67%,
+    rgb(250, 249, 250) 100%
+  );
+}
+.center-vertical {
+  display: flex;
+  align-items: center;
+}

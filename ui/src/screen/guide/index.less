@@ -1,0 +1,5 @@
+ol {counter-reset: item;
+    font-size: 18px;
+}
+ol li {display: block;}
+ol li:before {content: counter(item) ". "; counter-increment: item; font-weight: bold;}

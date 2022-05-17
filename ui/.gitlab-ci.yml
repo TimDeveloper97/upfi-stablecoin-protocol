@@ -1,0 +1,65 @@
+variables:
+  PUBLIC_URL: /
+  npm_config_cache: "$CI_PROJECT_DIR/.npm"
+.dependencies_cache:
+  cache:
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - .npm
+    policy: pull
+stages:
+  - build
+  - deploy
+build:
+  image: node:lts-alpine3.14
+  stage: build
+  variables:
+    npm_config_cache: "$CI_PROJECT_DIR/.npm"
+    CI: "false"
+#    GENERATE_SOURCEMAP: "true"
+#    SENTRY_PROJECT: "upfi_world_client"
+#    SENTRY_ORG: "upfi"
+#    SENTRY_AUTH_TOKEN: "c344cad7a559418e9868dda9cadf1a543aff6f943ac54e77ad08f728fd71fe52"
+#    SENTRY_URL: "https://sentry.upfi.network"
+#    REACT_APP_SENTRY_RELEASE: "$CI_COMMIT_SHORT_SHA"
+#    SENTRY_DSN: "https://d589fe5848f44137a469778f122bee99@sentry.upfi.network/2"
+  script:
+    - npm ci --prefer-offline    # Install all dependencies
+    - npm run build # Build for prod
+#    - rm -rf ./build/static/css/*.map #remove map file from artifacts
+#    - rm -rf ./build/static/js/*.map #remove map file from artifacts
+  extends: .dependencies_cache
+  cache:
+    policy: pull-push
+  artifacts:
+    name: "build-package"
+    paths:
+      - build
+    expire_in: 7 days
+
+.ssh_setup: &ssh_setup
+  - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+  - eval $(ssh-agent -s)
+  - mkdir -p ~/.ssh
+  - echo "$BITNAMI_SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+  - chmod 700 ~/.ssh/id_rsa
+  - eval "$(ssh-agent -s)"
+  - ssh-add ~/.ssh/id_rsa
+  - ssh-keyscan -H 'gitlab.com' >> ~/.ssh/known_hosts
+  - apt-get install rsync -y -qq
+  - apt-get install curl -y -qq
+  - rsync --help
+  - rm -rf ./build/static/js/*.map
+
+deploy_testnet:
+  stage: deploy
+  image: ubuntu:21.10
+  before_script:
+    - *ssh_setup
+  script:
+    - echo "Deploying to server"
+    - ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ubuntu@$IP_DEV -p 22
+    - rsync -avz --progress --delete-after -a -e "ssh -p 22" build/ ubuntu@$IP_DEV:/var/www/oasis-testnet.upfi.network
+    - echo "Application successfully deployed."

@@ -1,0 +1,27 @@
+@import '../../assets/style/base';
+.header {
+    width: 100%;
+    z-index: 1000;
+    height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 42px;
+    position: fixed;
+    padding: 0 10%;
+}
+.logo {
+    width: 45px;
+    height: 45px;
+}
+.header-item {
+    a {
+        &:extend(.T16_SM22);
+        align-items: center;
+        color: @unselect-color;
+        margin-left: @space-normal;
+    }
+    .item-active {
+        color: @Dark-color;
+    }
+}

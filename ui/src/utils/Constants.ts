@@ -1,0 +1,1 @@
+export const EXPLORER = 'https://testnet.explorer.emerald.oasis.dev'
