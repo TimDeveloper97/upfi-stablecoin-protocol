@@ -2,6 +2,7 @@ import { access } from "fs";
 import { ethers } from "hardhat";
 const USDC_CONTRACT_ADDRESS = "0xfe2c9efd1A63aA254ACaE60Bd4F37e657413f4E6"
 const POOL_CONTRACT_ADDRESS = "0xF0892b3B18438B595dE94490d4Ce87FB0AC9647B"
+const MY_ACCOUNT = "0x70997970C51812dc3A010C7d01b50e0d17dc79C8";
 
 async function main() {
   await initialize()
@@ -45,7 +46,7 @@ async function airdrop() {
   const account = "0x435403426b45d74d5C251D7982504cfC9146E8d7"
   const MyContract = await ethers.getContractFactory("Usdc");
   const contract = await MyContract.attach(USDC_CONTRACT_ADDRESS);
-  await contract.airdrop(account);
+  await contract.airdrop(MY_ACCOUNT);
 }
 
 async function approve() {
@@ -56,7 +57,7 @@ async function approve() {
   console.log("Approve result: ", result)
 }
 
-mint().catch((error) => {
+airdrop().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });

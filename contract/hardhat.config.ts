@@ -72,7 +72,7 @@ const config: HardhatUserConfig = {
     emerald_testnet: {
       url: "https://testnet.emerald.oasis.dev",
       accounts:
-        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : ["0xa59e7de1cbc8ac53921f6ea4bdf014cc0ee080dbf9dec3c2063ab472e194e936"],
+        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : ["0xa59e7de1cbc8ac53921f6ea4bdf014cc0ee080dbf9dec3c2063ab472e194e936", "0x59c6995e998f97a5a0044966f0945389dc9e86dae88c7a8412f4603b6b78690d"],
     },
     emerald_mainnet: {
       url: "https://emerald.oasis.dev",

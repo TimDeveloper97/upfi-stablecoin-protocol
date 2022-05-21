@@ -4,6 +4,8 @@ import Web3 from "web3";
 const UPO_CONTRACT_ADDRESS = "0x0F3C47a687960eCBad9E969Ea483E5E8b4D22Fb1"
 const ACCOUNT_TEST_ADDRESS = "0x435403426b45d74d5C251D7982504cfC9146E8d7"
 const POOL_CONTRACT_ADDRESS = "0xF0892b3B18438B595dE94490d4Ce87FB0AC9647B"
+const MY_ACCOUNT = "0x70997970C51812dc3A010C7d01b50e0d17dc79C8";
+
 async function main() {
   await setMinter();
   await mint();
@@ -51,7 +53,7 @@ async function airdrop() {
   const account = "0x435403426b45d74d5C251D7982504cfC9146E8d7"
   const MyContract = await ethers.getContractFactory("Upo");
   const contract = await MyContract.attach(UPO_CONTRACT_ADDRESS);
-  await contract.airdrop(account);
+  await contract.airdrop(MY_ACCOUNT);
 }
 
 async function approve() {
@@ -62,7 +64,7 @@ async function approve() {
   console.log("Approve result: ", result)
 }
 
-mint().catch((error) => {
+airdrop().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });

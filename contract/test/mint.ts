@@ -3,7 +3,7 @@ import { ethers } from "hardhat";
 
 describe("Mint", function () {
   it("Should Mint", async function () {
-    const [signer] = await ethers.getSigners();
+    const [signer, other] = await ethers.getSigners();
 
     const Upfi = await ethers.getContractFactory("Upfi");
     const upfi = await Upfi.deploy("Upfi coin", "UPFI");
@@ -41,15 +41,15 @@ describe("Mint", function () {
 
     await pool.deployed();
 
-    await pool.connect(signer).addTokenShare("UPO", UPO);
-    await pool.connect(signer).setTokenSharePrice("UPO", UPO_USD)
+    await pool.connect(other).addTokenShare("UPO", UPO);
+    await pool.connect(other).setTokenSharePrice("UPO", UPO_USD)
 
     await upo.setMinter(
-      signer.address,
+      other.address,
       ethers.utils.parseUnits("100000000", 18)
     );
     await upo.mint(pool.address, ethers.utils.parseUnits("1000000", 18));
-    await upo.mint(signer.address, ethers.utils.parseUnits("1000000", 18));
+    await upo.mint(other.address, ethers.utils.parseUnits("1000000", 18));
 
     await upfi.setMinter(
       pool.address,
@@ -57,11 +57,11 @@ describe("Mint", function () {
     );
 
     await usdc.setMinter(
-      signer.address,
+      other.address,
       ethers.utils.parseUnits("100000000", 18)
     );
     await usdc.mint(pool.address, ethers.utils.parseUnits("1000000", 18));
-    await usdc.mint(signer.address, ethers.utils.parseUnits("1000000", 18));
+    await usdc.mint(other.address, ethers.utils.parseUnits("1000000", 18));
 
     //approve
     // await upfi
@@ -75,13 +75,13 @@ describe("Mint", function () {
     //   .approve(signer.address, ethers.utils.parseUnits("1000000000", 18));
 
     await upfi
-      .connect(signer)
+      .connect(other)
       .approve(pool.address, ethers.utils.parseUnits("1000000000", 18));
     await usdc
-      .connect(signer)
+      .connect(other)
       .approve(pool.address, ethers.utils.parseUnits("1000000000", 18));
     await upo
-      .connect(signer)
+      .connect(other)
       .approve(pool.address, ethers.utils.parseUnits("1000000000", 18));
 
     const _collateral_amount = ethers.utils.parseUnits("100", 18);
@@ -94,7 +94,7 @@ describe("Mint", function () {
     console.log("UPO before: ", ethers.utils.formatEther(await upo.balanceOf(signer.address)));
 
     let result = await pool
-      .connect(signer)
+      .connect(other)
       .mint(_collateral_amount, _share_amount, _dollar_out_min, SYMBOL);
 
     console.log("Mint result:: ", result)
@@ -104,7 +104,7 @@ describe("Mint", function () {
     console.log("UPO after: ", ethers.utils.formatEther(await upo.balanceOf(signer.address))); 
   
     let result2 = await pool
-    .connect(signer)
+    .connect(other)
     .mint(_collateral_amount, _share_amount, _dollar_out_min, SYMBOL);
 
     console.log("Mint result 2: ", result2)

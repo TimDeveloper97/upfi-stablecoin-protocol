@@ -2,6 +2,7 @@ import { ethers } from "hardhat";
 
 const UPFI_CONTRACT_ADDRESS = "0x43E7A150FABdBB613dA446b07DB42dcAa3a1ef1c"
 const POOL_CONTRACT_ADDRESS = "0x9cc449142243947D70933bA9e19F6100Ac54d29B"
+const MY_ACCOUNT = "0x70997970C51812dc3A010C7d01b50e0d17dc79C8";
 
 async function main() {
   const accounts = await ethers.getSigners();
